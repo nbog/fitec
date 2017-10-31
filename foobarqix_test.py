@@ -13,7 +13,10 @@ def foobarqix(number):
         result += "Bar"
     if is_divisible(number, 7):
         result += "Qix"
-    return result
+    if result != "":
+        return result
+    else:
+        return "1"
 
 
 class FoobarQixTestCase(unittest.TestCase):
@@ -31,5 +34,7 @@ class FoobarQixTestCase(unittest.TestCase):
     def test_retrurn_FooBar_when_number_is_divisible_by_3_and_5(self):
         self.assertEqual(foobarqix(15), "FooBar")
 
+    def test_retrurn_FooBar_when_number_is_divisible_by_3_and_5(self):
+        self.assertEqual(foobarqix(1),"1")
 
 unittest.main()
